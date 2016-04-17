@@ -1,0 +1,16 @@
+/lib/systemd/foo.service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[Unit]
+Description=Run Script
+
+[Service]
+ExecStart=/bin/sh -c "/home/pi/scripts/test.sh"
+
+[Install]
+WantedBy=multi-user.target
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sudo systemctl enable /lib/systemd/foo.service
+sudo systemctl start foo.service
+sudo systemctl stop foo.service
