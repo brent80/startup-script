@@ -92,3 +92,4 @@ Looking at service files (logs, pid):
 Uninstalling service:
 
 ![service-uninstall](http://dl.dropbox.com/u/6414656/gist-4275302/service-uninstall.png
+
