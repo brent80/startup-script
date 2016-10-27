@@ -11,6 +11,7 @@ WantedBy=multi-user.target
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sudo systemctl daemon-reload
 sudo systemctl enable /lib/systemd/foo.service
 sudo systemctl start foo.service
 sudo systemctl stop foo.service
