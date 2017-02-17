@@ -1,4 +1,4 @@
-[![Build Status](https://jenkins.plowtech.net/buildStatus/icon?job=script)](https://jenkins.plowtech.net/job/script/)
+
 # startup-script
 
 Note: You can acheive the same thing that this project tries to acheive by using the MetaInit package in debian:
