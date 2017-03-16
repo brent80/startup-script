@@ -31,3 +31,35 @@ ExecStart=/bin/bash -c "/home/lumberjack/Private/rtu-client/rtu-client +RTS 2>> 
 
 [Install]
 WantedBy=multi-user.target
+
+chip@chip:/lib/systemd/system$ cat rtkattach.service 
+[Unit]
+Description=Run rtkattach
+
+[Service]
+User=root
+Restart=always
+RestartSec=15
+WorkingDirectory=/home/chip/rtl8723ds_bt/rtk_hciattach
+ExecStartPre=/bin/sh -c "/home/chip/rtl8723ds_bt/rtk_hciattach/bt_reset"
+ExecStart=/bin/bash -c "/home/chip/rtl8723ds_bt/rtk_hciattach/rtk_hciattach -n -s 115200 ttyS2 rtk_h5"
+
+[Install]
+WantedBy=multi-user.target
+
+
+chip@chip:~$ sudo cat /lib/systemd/system/blink.service 
+[Unit]
+Description=Run blink
+
+[Service]
+User=root
+Restart=always
+RestartSec=15
+WorkingDirectory=/home/chip/
+ExecStartPre=/bin/sh -c "sleep 10"
+ExecStart=/bin/bash -c "/home/chip/blink-api 2>> /home/chip/blink.err >> /home/blink.out"
+
+[Install]
+WantedBy=multi-user.target
+
