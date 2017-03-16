@@ -15,3 +15,19 @@ sudo systemctl daemon-reload
 sudo systemctl enable /lib/systemd/foo.service
 sudo systemctl start foo.service
 sudo systemctl stop foo.service
+
+
+
+[Unit]
+Description=Run rtu-client
+
+[Service]
+User=lumberjack
+Restart=always
+RestartSec=15
+WorkingDirectory=/home/lumberjack/Private/rtu-client
+ExecStartPre=/bin/sh -c "sleep 30"
+ExecStart=/bin/bash -c "/home/lumberjack/Private/rtu-client/rtu-client +RTS 2>> /home/lumberjack/tmp/rtu-client.err >> /home/lumberjack/tmp/rtu-client.out"
+
+[Install]
+WantedBy=multi-user.target
