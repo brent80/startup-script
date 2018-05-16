@@ -5,6 +5,9 @@ Description=Run Script
 
 [Service]
 ExecStart=/bin/sh -c "/home/pi/scripts/test.sh"
+LimitNOFILE=500000
+LimitNPROC=500000
+KillMode=process
 
 [Install]
 WantedBy=multi-user.target
