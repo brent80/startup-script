@@ -1,3 +1,20 @@
+[Unit]
+Description=Run field vpn
+
+[Service]
+User=root
+Restart=always
+RestartSec=15
+WorkingDirectory=/home/lumberjack/Private/fieldVpn
+ExecStartPre=/bin/sh -c "sleep 40"
+ExecStart=/bin/bash -c "/usr/local/sbin/openvpn --config /home/lumberjack/Private/fieldVpn/lumberJack-26.ovpn"
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
 /lib/systemd/foo.service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [Unit]
