@@ -23,6 +23,9 @@ WantedBy=multi-user.target
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 [Unit]
 Description=Run Script
+Requires=network-online.target
+After=network.target
+
 
 [Service]
 ExecStart=/bin/sh -c "/home/pi/scripts/test.sh"
