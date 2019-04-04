@@ -102,3 +102,17 @@ ExecStart=/bin/bash -c "/home/chip/blink-api 2>> /home/chip/blink.err >> /home/b
 [Install]
 WantedBy=multi-user.target
 
+-----------------------------------------------------------------------------------------
+
+[Unit]
+Description=Keter Web Server
+Documentation=man:keter(1p) http://github.com/snoyberg/keter
+After=network.service
+
+[Service]
+User=root
+ExecStart=/home/node/keter/keter /home/node/keter/keter-config.yaml
+
+[Install]
+WantedBy=multi-user.target
+
